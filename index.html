@@ -1,293 +1,37 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
-<meta name="renderer" content="webkit">
-<meta name="google" value="notranslate">
-<meta name="robots" content="index,follow">
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>雪气味's Blog</title>
+</head>
+<link rel="stylesheet" href="lib/bootstrap/css/">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/jquery.fullPage.css">
+<script src="lib/less/less.js"></script>
 
-
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="郑伟博客">
-<meta name="twitter:description" content="前端技术学习">
-<meta name="twitter:image:src" content="https://zhengwei1949.github.io/images/avatar.png">
-
-<meta property="og:url" content="https://zhengwei1949.github.io">
-<meta property="og:title" content="郑伟博客">
-<meta property="og:description" content="前端技术学习">
-<meta property="og:site_name" content="郑伟博客">
-<meta property="og:image" content="https://zhengwei1949.github.io/images/avatar.png">
-<meta property="og:type" content="website">
-<meta name="robots" content="noodp">
-
-<meta itemprop="name" content="郑伟博客">
-<meta itemprop="description" content="前端技术学习">
-<meta itemprop="image" content="https://zhengwei1949.github.io/images/avatar.png">
-
-<link rel="canonical" href="https://zhengwei1949.github.io">
-
-<link rel="shortcut icon" href="/favicon.png">
-<link rel="apple-itouch-icon" href="/favicon.png">
-<link rel="stylesheet" href="/bundle/index.css">
-<script type="text/javascript">
-    var timeSinceLang = {
-        year: '年前',
-        month: '个月前',
-        day: '天前',
-        hour: '小时前',
-        minute: '分钟前',
-        second: '秒前'
-    };
-    var root = '';
-</script>
-
-<script type="text/javascript">
-    var conn, reloadTimer, connectTimer;
-    var connect = function() {
-        conn = new WebSocket('ws://' + location.host + '/live');
-        conn.onmessage = function(event) {
-            if (event.data === 'change') {
-                if (reloadTimer) clearTimeout(reloadTimer);
-                reloadTimer = setTimeout(function() {
-                    window.location.reload();
-                }, 200);
-            }
-        };
-        conn.onclose = function() {
-            if (connectTimer) clearTimeout(connectTimer);
-            connectTimer = setTimeout(function() {
-                connect();
-            }, 1000);
-        };
-    };
-    connect();
-</script>
-
-
-        <meta name="keywords" content="前端技术学习">
-        <meta name="description" content="前端技术学习">
-        <title>郑伟博客</title>
-    </head>
-    <body>
-        <article class="container">
-            <header class="header-wrap">
-  <a class="index" href="/">
-    <img class="logo" src="/images/avatar.png" />
-    郑伟博客
-  </a>
-  <ul class="menu">
-      <li class="menu-item"><a href="/archive.html">归档</a></li>
-      <li class="menu-item"><a href="/tag.html">标签</a></li>
-      <li class="menu-item"><a href="/atom.xml">订阅</a></li>
-  </ul>
-</header>
-
-            <article class="main page">
-                <header class="header site">
-                    
-                        <img class="logo" src="/images/avatar.png" />
-                        <h1 class="title">郑伟博客</h1>
-                        <h2 class="subtitle">前端技术学习</h2>
-                        <div class="search-wrap">
-  <input id="search" class="search" placeholder="搜索..." data-root="">
-  <svg class="icon" width="25" height="25" viewBox="0 0 25 25"><path d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z"></path></svg>
-</div>
-
-                    
-                </header>
-                <ul class="article-list">
-                    
-                    <li class="article">
-                        <a class="title" href="/%e7%ae%80%e5%8e%86.html">如何写简历</a>
-                        <div class="cover" style="background-image:url(/images/vue.jpg);"></div>
-                        <section class="preview content"><p>如何写简历</p>
-</section>
-                        <section class="info">
-                            
-                            
-                            
-                            <span class="date" data-time="1491184800"><span class="from"></span></span>
-                            
-                            <span class="tags">
-                            <a class="tag" href="/tag/%e9%9d%a2%e8%af%95%e6%8a%80%e5%b7%a7/index.html">面试技巧</a>
-                            </span>
-                        </section>
-                    </li>
-                    
-                    <li class="article">
-                        <a class="title" href="/angular_%e5%86%85%e7%bd%ae%e6%8c%87%e4%bb%a4%e6%b1%87%e6%80%bb.html">angular内置指令汇总</a>
-                        
-                        <section class="preview content"><p>angular内置指令汇总</p>
-</section>
-                        <section class="info">
-                            
-                            
-                            
-                            <span class="date" data-time="1491184800"><span class="from"></span></span>
-                            
-                            <span class="tags">
-                            <a class="tag" href="/tag/angular/index.html">angular</a>
-                            </span>
-                        </section>
-                    </li>
-                    
-                    <li class="article">
-                        <a class="title" href="/bower%e4%bd%bf%e7%94%a8%e6%89%8b%e8%ae%b0.html">bower使用手记</a>
-                        <div class="cover" style="background-image:url(/images/bower-logo.svg);"></div>
-                        <section class="preview content"><p>bower是一个用来下载前端的库(框架)的下载器</p>
-</section>
-                        <section class="info">
-                            
-                            
-                            
-                            <span class="date" data-time="1491184800"><span class="from"></span></span>
-                            
-                            <span class="tags">
-                            <a class="tag" href="/tag/%e5%89%8d%e7%ab%af%e5%b7%a5%e5%85%b7/index.html">前端工具</a>
-                            </span>
-                        </section>
-                    </li>
-                    
-                    <li class="article">
-                        <a class="title" href="/%e7%90%86%e8%a7%a3promise.html">理解promise</a>
-                        <div class="cover" style="background-image:url(/images/bower-logo.svg);"></div>
-                        <section class="preview content"><p>理解promise</p>
-</section>
-                        <section class="info">
-                            
-                            
-                            
-                            <span class="date" data-time="1491184800"><span class="from"></span></span>
-                            
-                            <span class="tags">
-                            <a class="tag" href="/tag/js%e7%90%86%e8%ae%ba%e7%9f%a5%e8%af%86/index.html">js理论知识</a>
-                            </span>
-                        </section>
-                    </li>
-                    
-                    <li class="article">
-                        <a class="title" href="/%e6%89%93%e5%8c%85sea.js.html">打包sea.js</a>
-                        
-                        <section class="preview content"><p>打包sea.js代码</p>
-</section>
-                        <section class="info">
-                            
-                            
-                            
-                            <span class="date" data-time="1491184800"><span class="from"></span></span>
-                            
-                            <span class="tags">
-                            <a class="tag" href="/tag/%e5%89%8d%e7%ab%af%e5%b7%a5%e5%85%b7/index.html">前端工具</a>
-                            </span>
-                        </section>
-                    </li>
-                    
-                    <li class="article">
-                        <a class="title" href="/%e6%89%92%e7%bd%91%e7%ab%99%e6%95%99%e7%a8%8b.html">扒网站教程</a>
-                        
-                        <section class="preview content"><p>扒网站</p>
-</section>
-                        <section class="info">
-                            
-                            
-                            
-                            <span class="date" data-time="1491184800"><span class="from"></span></span>
-                            
-                            <span class="tags">
-                            <a class="tag" href="/tag/%e5%89%8d%e7%ab%af%e5%b7%a5%e5%85%b7/index.html">前端工具</a>
-                            </span>
-                        </section>
-                    </li>
-                    
-                    <li class="article">
-                        <a class="title" href="/gulp%e4%bd%bf%e7%94%a8%e6%80%bb%e7%bb%93.html">gulp总结</a>
-                        <div class="cover" style="background-image:url(/images/iruTC031_400x400.png);"></div>
-                        <section class="preview content"><p>gulp是一个用来前端的工作流构建工具。</p>
-</section>
-                        <section class="info">
-                            
-                            
-                            
-                            <span class="date" data-time="1491184800"><span class="from"></span></span>
-                            
-                            <span class="tags">
-                            <a class="tag" href="/tag/%e5%89%8d%e7%ab%af%e5%b7%a5%e5%85%b7/index.html">前端工具</a>
-                            </span>
-                        </section>
-                    </li>
-                    
-                    <li class="article">
-                        <a class="title" href="/angular_jquery.html">angular中使用jquery</a>
-                        <div class="cover" style="background-image:url(/images/bower-logo.svg);"></div>
-                        <section class="preview content"><p>angular中使用jquery</p>
-</section>
-                        <section class="info">
-                            
-                            
-                            
-                            <span class="date" data-time="1491184800"><span class="from"></span></span>
-                            
-                            <span class="tags">
-                            <a class="tag" href="/tag/angular/index.html">angular</a>
-                            </span>
-                        </section>
-                    </li>
-                    
-                    <li class="article">
-                        <a class="title" href="/vue%20cli%e4%bd%bf%e7%94%a8%e6%80%bb%e7%bb%93.html">vue cli使用总结</a>
-                        <div class="cover" style="background-image:url(/images/vue.jpg);"></div>
-                        <section class="preview content"><p>vue项目脚手架</p>
-</section>
-                        <section class="info">
-                            
-                            
-                            
-                            <span class="date" data-time="1491184800"><span class="from"></span></span>
-                            
-                            <span class="tags">
-                            <a class="tag" href="/tag/%e5%89%8d%e7%ab%af%e5%b7%a5%e5%85%b7/index.html">前端工具</a>
-                            </span>
-                        </section>
-                    </li>
-                    
-                    <li class="article">
-                        <a class="title" href="/vue%e7%ae%80%e6%98%8e%e6%95%99%e7%a8%8b.html">vue简明教程</a>
-                        <div class="cover" style="background-image:url(/images/vue.jpg);"></div>
-                        <section class="preview content"><p>优雅、简洁的前端框架</p>
-</section>
-                        <section class="info">
-                            
-                            
-                            
-                            <span class="date" data-time="1491184800"><span class="from"></span></span>
-                            
-                            <span class="tags">
-                            <a class="tag" href="/tag/%e5%89%8d%e7%ab%af%e6%a1%86%e6%9e%b6/index.html">前端框架</a>
-                            </span>
-                        </section>
-                    </li>
-                    
-                </ul>
-                <section class="page-nav">
-                    
-                    <span class="nav">1 / 2</span>
-                    <a class="next" href="/page2.html">下一页</a>
-                </section>
-            </article>
-        </article>
-        <footer class="footer">
-    <span class="copyright">
-        郑伟博客 ©
-        <script type="text/javascript">
-            document.write(new Date().getFullYear());
-        </script>
-    </span>
-    <span class="publish">Powered by <a href="https://zhengwei1949.github.io/" target="_blank">zhengwei</a></span>
-</footer>
-
-    </body>
-    <script src="/bundle/index.js"></script>
+<body>
+	<div id="dowebok">
+		<div class="section">
+			<a href="vue简易留言板.html">
+				去吧,到vue构成的简易留言板
+			</a>
+		</div>
+		<div class="section">
+			<h3>不知当讲不当讲</h3>
+			<div class="slide">第二屏的第一屏</div>
+			<div class="slide">第二屏的第二屏</div>
+			<div class="slide">第二屏的第三屏</div>
+		</div>
+		<div class="section">
+			<h3>食屎啦你</h3>					
+		</div>
+		<div class="section">
+			<h3>天若有情天亦老</h3>
+		</div>
+	</div>
+	<a href="javascript:;" class="back">返回</a>
+</body>
+<script src="lib/jquery/jquery-3.0.0.min.js"></script>
+<script src='lib/jquery/jquery.fullPage.min.js'></script>
+<script src="js/index.js"></script>
 </html>
