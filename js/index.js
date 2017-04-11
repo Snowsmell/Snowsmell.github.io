@@ -7,5 +7,9 @@ $(function(){
 		}	
 	})
 
+	// $('.section').css({
+	// 	'backgroundSize':$(window).width()+'px' $(window).height()+'px'
+	// })
+
 
 })
