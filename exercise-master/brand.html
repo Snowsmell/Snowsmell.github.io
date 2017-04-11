@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- 先引入第三方的框架 -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <!-- 再引入自己的less -->
+    <link rel="stylesheet/less" href="css/base.less">
+    <link rel="stylesheet/less" href="css/brand.less">
+    <!-- 编译less文件的js -->
+    <script src="lib/less/less.js"></script>
+    
+</head>
+
+<body>
+
+<nav>
+	<a href="index.html">首页</a><span> > </span><a href="brandtitle.html">品牌大全</a> <span> > </span><a href="javascript:void(0)" class="compare" ></a>
+</nav>
+
+<main>
+	<div class='toptitle'>
+		<p1 class='compare'>挖掘机技术哪家强</p1>
+	</div>
+	<ul class='brandlist'>
+
+	</ul>
+	<ul class='productlist'>
+
+	</ul>
+	<ul class="discusslist">
+
+	</ul>
+</main>
+
+    <!-- 先引入jquery  Bootstrap依赖jquery-->
+    <script src="lib/jquery/jquery.js"></script>
+    <!-- 后引入Bootstrap的js文件 -->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="js/template.js"></script>
+    
+    <!--品牌排行模板-->
+    <script type="text/html" id="brandtype">
+    	{{each result as value}}
+			<li>
+				<div class="ranking"></div>
+				<a href="javascript:void(0)"  class="toProduct">
+	
+					<p class="brandName">
+						{{value.brandName}}
+					</p>
+					<p class="brandInfo">
+						{{value.brandInfo}}
+					</p>
+	
+				</a>
+			</li>
+		{{/each}}
+    </script>
+       
+     <!--产品的模板-->
+	<script type='text/html' id='productList'>
+  		{{each result as value}}
+		<li>
+			<a href="productdetails.html?productid={{value.productId}}" class="toDetail" data-productId='{{value.productId}}'> 
+				<div class="pic">
+					{{#value.productImg}}
+				</div>
+				<div class="info">
+					<div class="productTitle">
+						{{value.productName}}
+					</div>
+					<div class="price">
+						{{value.productPrice}}
+					</div>
+					<div class="info-foot">
+						<span>{{value.productQuote}}</span>
+						<span class="discuss">{{value.productCom}}</span>
+					</div>
+				</div>
+			</a>
+			<a href="javascript:void(0)"  class="toDiscuss" data-productId='{{value.productId}}'>
+			</a>
+		</li>		
+		{{/each}}
+	</script> 
+     
+     <!--评论的模板-->
+     <script type="text/html" id='discussList'>
+     	{{each result as value}}
+			
+			<li>
+				<div class="userinfo">
+					<span>{{value.comName}}</span>
+					<span>{{value.comTime}}</span>
+				</div>
+				<div class="fromwhere">{{value.comFrom}}</div>
+				<div class="sentence">
+					{{value.comContent}}
+				</div>
+				
+				<a href="javascript:void(0)">回复</a>
+			
+			</li>     	
+     	
+     	{{/each}}
+     </script>
+    <!-- 最后引入自己的js文件 -->
+    <script src="js/brand.js"></script>
+</body>
+<script src ="js/header.js"></script>
+<script src ="js/footer.js"></script>
+</html>

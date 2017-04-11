@@ -1,0 +1,104 @@
+//头部
+body{
+    min-width: 280px;
+}
+header{
+    background:#ff841d;
+    height: 44px;
+    .back{
+        float: left;
+        a{
+            display: block;
+            width: 50px;
+            height: 44px;
+            background: url(../images/baicaijia-back.png) no-repeat center;
+        }
+    }
+    .appdown{
+        width:50px;
+        height: 44px;
+        float: right;
+        a{ 
+            img{          
+                height: 34px;
+                margin-left: 8px;
+                margin-top: 6px;                
+            }
+        }
+    }
+    .title{
+        margin:0 50px ;
+        h1{
+            text-align: center;
+            line-height: 44px;
+            color:white;
+            font-size:20px;
+        }
+
+    }
+}
+
+main {
+    background-color: white;
+    > .inlandList {
+        overflow: hidden;
+        > li {
+            width:50%;
+            float: left;
+            padding:10px 0 0 10px;
+            border-bottom:1px solid #ccc;            
+            >a{
+                display: block;
+                width: 100%;                
+                .pic {
+                    text-align: center;
+                    min-height: 100px;
+                    max-height: 135px;
+                    img {
+                        width: 140px;
+                        height: 140px;
+                        position: relative;
+                        z-index: -2;
+                    }
+                }
+                .info {
+                    >h3{
+                        overflow: hidden;
+                        color: #333333;
+                        padding: 0 8px;
+                        font-size: 14px;
+                        text-align: left;
+                        text-align-last: left;
+                        line-height: 18px;
+                        height: 36px;
+                        word-break: break-all;
+                        margin-top: 10px;
+                    };
+                    >p{
+                        padding:0 8px;
+                        color:#ff6c00;
+                        font-size: 14px;
+                        overflow: hidden;
+                        word-break: break-all;
+                        height: 18px;
+                        line-height: 18px;
+                    }
+                    >div{
+                        overflow: hidden;
+                        height: 18px;
+                        line-height: 18px;
+                        span:first-of-type{
+                            margin-left: 8px;
+                        }                       
+                    }                   
+                }                
+            }
+
+
+        }
+        >li:nth-of-type(2n+1){
+            border-right:1px solid #ccc
+        }
+    }
+    
+}

@@ -1,0 +1,155 @@
+//头部
+body{
+    min-width: 280px;
+}
+header{
+    background:#ff841d;
+    height: 44px;
+    .back{
+        float: left;
+        a{
+            display: block;
+            width: 50px;
+            height: 44px;
+            background: url(../images/baicaijia-back.png) no-repeat center;
+        }
+    }
+    .appdown{
+        width:50px;
+        height: 44px;
+        float: right;
+        a{ 
+            img{          
+                height: 34px;
+                margin-left: 8px;
+                margin-top: 6px;                
+            }
+        }
+    }
+    .title{
+        margin:0 50px ;
+        h1{
+            text-align: center;
+            line-height: 44px;
+            color:white;
+            font-size:20px;
+        }
+
+    }
+}
+
+main {
+    background-color: white;
+    >.context{
+        padding:5px;
+        >p{
+            font-size: 18px;
+            margin: 10px auto 5px auto;
+            font-weight: 800;
+            text-align: left;
+            text-align-last: left;
+            word-break: break-all;
+            color: #5a5a5a;
+            line-height: normal;            
+        }
+        >.price{
+            color: #ff6c00;
+            display: block;
+            font-size: 15px;
+        }
+        >span{
+            margin: 12px auto;
+            color: #999999;
+            font-size: 12px;
+        }
+        >article{
+            line-height: 24px;
+            color: #606060;
+            word-break: break-all;
+            margin: 6px auto;
+            font-size: 16px;
+        }
+        >.pic{
+            >img{
+                max-width: 100%;
+            }
+        }        
+    };
+
+    >.buy {
+        > a {
+            display: block;
+            margin: 20px 10px;
+            background: #FF9000;
+            height: 30px;
+            border-radius: 4px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #ffffff;
+        }
+    };
+    >div:nth-of-type(3){
+        width:100%;
+        padding:0 10px;
+        img{
+            width: 100%;
+        }
+    }
+    >div:nth-of-type(4){
+        .tit{
+            font-size: 16px;
+            padding: 6px 8px;            
+        }
+        .reply{
+            padding: 6px 8px;
+            >.form{
+                border: 2px solid #ECEAE8;
+                border-radius: 2px;
+                padding: 4px 0 0 4px;
+                background-color: #fff;
+                position: relative;
+                width: 98%;
+                margin: 0px auto;
+                >textarea{
+                    width: 100%;
+                    resize: none;
+                    overflow-x: hidden;
+                    overflow-y: auto;
+                    border: none;
+                    line-height: 22px;
+                    font-size: 14px;
+                    outline: 0;
+                    color: #666;
+                    height: 68px;
+                }
+                 >.ctrl{
+                    background-color: #fbfbfb;
+                    height: 36px;
+                    margin-left: -4px;
+                    border-top: solid 1px #f2f2f2;
+                    >input{
+                        position: absolute;
+                        right: -2px;
+                        bottom: -2px;
+                        background: #ff841d;
+                        border: none;
+                        border: 2px solid #ff841d;
+                        border-left: none;
+                        border-top: none;
+                        padding: 0px;
+                        width: 100px;
+                        height: 39px;
+                        color: #fff;
+                        outline: 0;
+                        border-radius: 0 0 2px 0;
+                        font-size: 16px;                    
+                    }
+                }               
+            }
+
+        }
+        
+    }
+
+}

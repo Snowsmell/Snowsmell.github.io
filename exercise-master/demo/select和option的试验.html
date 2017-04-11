@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<select name="">
+			<option value="1">我是1</option>
+			<option value="2">我是2</option>
+			<option value="3">我是3</option>
+			<option value="4">我是4</option>
+			
+			
+		</select>
+	</body>
+	<script>
+		var id =3;
+		var options = document.querySelectorAll('option')
+		var sel = document.querySelector('select')
+		sel.onchange = function(){
+			console.log(sel.value)
+		}
+		console.log(sel[2])
+	</script>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- 先引入第三方的框架 -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <!-- 再引入自己的less -->
+    <link rel="stylesheet/less" href="css/base.less">
+    <link rel="stylesheet/less" href="css/category.less">
+    <!-- 编译less文件的js -->
+    <script src="lib/less/less.js"></script>
+    <title>比价搜索</title>
+</head>
+
+<body>
+	
+	<main>
+		<ul class="categorytype">
+
+		</ul>
+	</main>
+
+
+
+
+
+
+
+    <!-- 先引入jquery  Bootstrap依赖jquery-->
+    <script src="lib/jquery/jquery.js"></script>
+    <!-- 后引入Bootstrap的js文件 -->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="js/template.js"></script>
+	
+	<!--种类模板-->
+	<script type='text/html' id='categorytitlelist'>
+		{{each result as value}}
+			<li  data-titleId='{{value.titleId}}' data-getAjax='false'>
+				<a href="javascript:void(0)" class='firstmenu'>
+					{{value.title}}
+				</a>
+				<ul class='secondmenu'></ul>
+			</li>		
+		{{/each}}
+	</script>
+    
+    
+    <!--种类子模板-->
+    
+    <script type="text/html" id="categorydetail">
+    	{{each result as value}}
+    		<li>
+				<a href="productlist.html?categoryId={{value.categoryId}}">
+					{{value.category}} 
+				</a>   		
+    		</li>
+    	{{/each}}
+    </script>
+    
+    
+    
+    
+    
+    
+    <!-- 最后引入自己的js文件 -->
+    <script src="js/category.js"></script>
+</body>
+<script src ="js/header.js"></script>
+<script src ="js/footer.js"></script>
+</html>

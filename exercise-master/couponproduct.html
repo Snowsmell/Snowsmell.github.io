@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 视口 移动端才识别 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- IE需要用最新的渲染引擎渲染当前页面 -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- 兼容不支持html5标签和media查询的浏览器 -->
+	<!-- http形式下打开才能正常使用 -->
+	<!--[if lt IE 9]>
+		<script src="lib/html5shiv/html5shiv.min.js"></script>
+		<script src="lib/respond/respond.js"></script>
+	<![endif]-->
+    <title>优惠券详情</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet/less" href="css/base.less" />
+    <link rel="stylesheet/less" href="css/couponproduct.less" />
+    <script src="lib/less/less.js"></script>
+</head>
+<body>
+<!--头部-->
+<header name="header">
+	<div class="back">
+		<a href="coupon.html"></a>
+	</div>
+	<div class='appdown'>
+			<a href="javascript:window.location=%27http://m.manmanbuy.com/download/%27" title="手机app下载">
+				<img src="images/header_app.png" alt="手机app下载" />
+			</a>
+	</div>
+	<div class='title'>
+		<h1 class='nameType'>优惠券</h1>
+	</div>
+</header>
+
+
+<!--//商品详情-->
+<main>
+	<p class="maintitle">--点餐前出示手机中的优惠券，即可享受优惠--</p>
+	<ul class="clearfix">
+
+	</ul>
+</main>
+
+<!--遮罩层与轮播图部分-->
+<div id='banner'>
+	<ul class="bannerPic"></ul>
+	<a href="javascript:;" id="goleft">&lt;</a>
+	<a href="javascript:;" id="goright">&gt;</a>
+</div>
+
+</body>
+
+<!--引入头部和底部-->
+
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="js/template.js"></script>
+<script src ="js/footer.js"></script>
+
+<!--图标们-->
+<script type="text/html" id="coupontype">
+	{{each result as value}}
+		<li class="clearfix">
+			<a href="javascript:;" class='imageClick'>
+				<div class="pic">
+					{{#value.couponProductImg}}
+				</div>
+				<div class="info">
+					<div class="context">
+						<h3>{{value.couponProductName}}</h3>
+						<h2>{{value.couponProductPrice}}</h2>
+					</div>
+					<div class="time">
+						{{value.couponProductTime}}
+					</div>
+				</div>
+			</a>
+		</li>
+	{{/each}}
+	
+	
+<!--遮罩层-->
+<script type="text/html" id='ulpics'>
+	{{each result as value}}
+		<li class='banLis'>
+			{{#value.couponProductImg}}
+		</li>
+	{{/each}}
+
+	
+</script>
+</script>
+<script src='js/couponproduct.js'></script>
+
+</html>

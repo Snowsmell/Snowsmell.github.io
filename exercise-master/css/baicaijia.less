@@ -1,0 +1,219 @@
+//头部
+body{
+    min-width: 320px;
+}
+header{
+    background:#e4393c;
+    height: 44px;
+    .back{
+        float: left;
+        a{
+            display: block;
+            width: 50px;
+            height: 44px;
+            background: url(../images/baicaijia-back.png) no-repeat center;
+        }
+    }
+    .appdown{
+        width:50px;
+        height: 44px;
+        float: right;
+        a{ 
+            img{          
+                height: 34px;
+                margin-left: 8px;
+                margin-top: 6px;                
+            }
+        }
+    }
+    .title{
+        margin:0 50px ;
+        h1{
+            text-align: center;
+            line-height: 44px;
+            color:white;
+            font-size:20px;
+        }
+    }
+}
+//导航条
+nav{
+    position: relative;
+    border-bottom: 1px solid #eeeeee;
+    span{
+        display: block;
+        float: right;
+        width: 38px;
+        height: 38px;
+        border-left:1px solid #e6e6e6;
+        background-color: #fbfbfb;
+        background-image:url(../images/baicaijia-search.png) ;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .tab{
+        height: 38px;
+        background-color: white;
+        overflow: hidden;
+        z-index: 999;
+        position: relative;
+        ul{
+            li{
+                float: left;
+                a{  display:block;
+                    height: 36px;
+                    color:black;
+                    text-align: center;
+                    font-size:14px;
+                    line-height: 38px;
+                    margin:0 10px;
+                    box-sizing: content-box;
+                };
+                .current{
+                    color:red;
+                    border-bottom: 2px solid red;
+                };
+            }
+        }
+    }
+}
+//商品页
+main{
+    li{
+        box-sizing: border-box;
+        height: 150px;
+        padding:10px 5px;
+        background-color: white;
+        margin: 5px 0;
+        a{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .pic{
+            float: left;
+            width: 135px;
+            height: 130px;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .info{
+            margin-left: 140px;
+            height:100%;
+            overflow: hidden;
+            .infoTitle{
+                color:black;
+                font-size:14px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                span{
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis
+                }
+            }
+            .price{
+                margin: 10px 0;
+                font-size: 20px;
+                color:#fc353a;
+                i{
+                    font-size:16px;
+                    
+                };
+                em{
+                    font-size:10px
+                };
+                del{
+                    color:#ccc;
+                    text-decoration: line-through;
+                    font-size:14px;
+                    margin-left: 10px;
+                }
+            }
+            .discount{
+                position: relative;
+                .goquan{
+                    width: 60%;
+                    height: 60px;
+                    display: block;
+                    position: absolute;
+                    opacity: 1;
+                }
+                i{
+                    display: inline-block;
+                    width: 82px;
+                    border: 1px solid red;
+                    border-radius: 5px;
+                    background-color: #ffb7b7;
+                    height: 14px;
+                    text-align: center;
+                    color:white;
+                    position: relative;
+                    em{
+                        display: block;
+                        background-color: red;
+                        height: 100%;
+                        border-radius: 5px;
+                    }
+                    span{
+                        position: absolute;
+                        left: 35px;
+                        top: -3px;
+                    }
+                }
+                b{
+                    font-weight: 400;
+                    color: #fc353a;
+                    margin-left: 10px;
+                    margin-top: -5px;
+                }
+            }
+            .pay{
+                margin-top: 10px;
+                overflow: hidden;
+                .service{
+                    float: left;
+                    border:1px dotted #e4393c;
+                    color:#e4393c;
+                    padding: 3px 5px;
+                }
+                .buy{
+                    float: right;
+                    a{  
+                        height: 28px;
+                        line-height: 28px;
+                        text-align: center;
+                        display: block;
+                        background-color: #ff5e5d;
+                        color: #ffffff;
+                        border-radius: 4px;
+                        width:58px;
+                        font-size: 12px;
+                        position: relative;
+                        z-index: 1;                        
+                    }
+
+                }
+            }
+        }
+    }
+}
+#gohead{
+position: fixed;
+    position: fixed;
+    z-index: 999;
+    bottom: 30px;
+    right: 8px;
+    width: 40px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 30px;
+    height: 40px;
+    border-radius: 20px;
+    opacity: 0.5;
+    background-color: #000000;    
+    display: none;
+}

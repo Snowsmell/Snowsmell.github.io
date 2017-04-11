@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- 先引入第三方的框架 -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <!-- 再引入自己的less -->
+    <link rel="stylesheet/less" href="css/base.less">
+    <link rel="stylesheet/less" href="css/index.less">
+    <!-- 编译less文件的js -->
+    <script src="lib/less/less.js"></script>
+    
+</head>
+
+<body>
+
+	<!--导航栏-->
+	<nav class="clearfix">
+		<ul class="navlists">
+			
+		</ul>
+	</nav>
+
+
+<!--推荐商品栏-->
+<main>
+	<div class="maintitle">
+		<img src="images/index-more.png"  />
+		超值折扣推荐		
+	</div>
+	
+	<ul>
+	
+	</ul>
+	
+	<div>
+		<a href="moneyctrl.html">
+			<span>更多优惠信息</span><span>&gt;&gt;</span>
+		</a>
+	</div>
+	
+</main>
+
+
+
+<!--尾部-->
+
+
+
+
+
+
+    <!-- 先引入jquery  Bootstrap依赖jquery-->
+    <script src="lib/jquery/jquery.js"></script>
+    <!-- 后引入Bootstrap的js文件 -->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="js/template.js"></script>
+    
+    <!--菜单栏的模板-->
+    <script type='text/html' id ='navlist'>
+    	{{each result as value}}
+			<li>				
+				<a href="{{value.titlehref}}">
+					{{#value.img}}
+					<p>{{value.name}}</p>
+				</a>
+			</li>    	
+    	{{/each}}
+    </script>
+    
+    <!--折扣品的模板-->
+    <script type="text/html" id='productlist'>
+    	{{each result as value}}
+	 		<li>
+				<a href="moneyproduct.html?productid={{value.productId}}">
+					<div class="pic">
+						{{#value.productImgSm}}
+					</div>
+					<div class="info">
+						<div class="price">
+							<span>{{value.productName}}</span>
+							<span>{{value.productPinkage}}</span>
+						</div>
+						
+						<div>
+							<span>{{value.productFrom}}</span>
+							<span>|</span>
+							<span>{{value.productTime}}</span>
+							<span>{{value.productComCount}}</span>
+						</div>
+					</div>
+				</a>
+			</li>   	
+    	   	
+    	{{/each}}
+    </script>
+    
+    
+    <!-- 最后引入自己的js文件 -->
+    <script src="js/index.js"></script>
+</body>
+<script src ="js/header.js"></script>
+<script src ="js/footer.js"></script>
+</html>
