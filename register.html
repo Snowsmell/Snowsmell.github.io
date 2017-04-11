@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Angular尝试</title>
+    <link  rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">  
+    <script src="./lib/jquery/jquery-2.2.2.min.js" ></script>
+    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./lib/angular/angular.min.js"></script>
+</head>
+<body>
+    <div class="container" ng-app='submiter' ng-controller="submitcol">
+        <form role="form" >
+            <div class="form-group">
+                <label for="username ">用户名是：</label>
+                <input type="text" class="form-control " placeholder="请输入姓名" ng-model="name">
+            </div>
+            <div class="form-group">
+                <label for="password ">密码：</label>
+                <input type="text" class="form-control " placeholder="请输入密码" ng-model="psd">
+                <label for="passwordAgain ">确认密码：</label>
+                <input type="text" class="form-control " placeholder="请再次输入密码" ng-model="psd2">
+            </div>
+            <div class="form-group">
+                <label for="agree ">是否同意协议</label>
+                <input type="checkbox" ng-model="isagree">
+            </div>            
+            <div class="form-group">
+                <label for="submit" class="col-md-2 col-xs-5" >注册按钮</label>
+                <input type="button" value="注册按钮" class="btn btn-primary text-right col-md-2 col-md-offset-8
+                col-xs-4 col-xs-offset-3" data-toggle="modal" data-target="#layer">
+            </div>           
+        </form>
+        <h5 class="text-danger">{{msg}}</h5>
+        <!--模态框-->
+        <div role="dialog" class="modal fade" id="layer">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class=" close " data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                        <h4 class="text-primary"> 确认提交吗？</h4>
+                        
+                    </div>
+                    <div class="modal-body text-right" >
+                        <button class="btn btn-primary" data-dismiss="modal" ng-click="register()">确认</button>
+                        <button class="btn btn-danger" data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--表单，存放注册成功的人和密码-->
+        <table class="table table-bordered table-hover table-striped">
+            <caption class="h3 text-info text-center">用户信息表</caption>
+            <tr>
+                <th class="text-center">Name</th>
+                <th class="text-center">Password</th>
+                <th class="text-center">Delete</th>                
+            </tr>
+            <tr ng-repeat="x in xqw">
+                <td class="text-center">{{x.name}}</td>
+                <td class="text-center">{{x.psd}}</td>
+                <td class="text-center">
+                    <input type="button" class="btn btn-danger" value="删除">  
+                </td>                
+            </tr>
+            <tr ng-show="iszero">
+                <td colspan="3" class="text-center text-danger">暂无数据</td>
+            </tr>
+        </table>
+
+    </div>
+        
+    <script>
+        //创建模块
+        var submit = angular.module('submiter',[])
+
+        //创建控制器
+        submit.controller('submitcol',function($scope){
+            //初始化
+            $scope.name='';
+            $scope.psd='';
+            $scope.psd2='';
+            $scope.isagree=false; //判断是否同意协议
+            $scope.msg='';  //提示信息
+            $scope.iszero=true;
+            
+            
+            $scope.register=function(){
+                if(this.name.length==0){
+                    this.msg ="无效的用户名";
+                    return;
+                }
+                if(this.name.length>6){
+                    this.msg="用户名姓名过长";
+                    return;
+                }
+                if(this.psd!=this.psd2){
+                    this.msg='密码前后不一致';
+                    return;
+                }
+                if(!this.isagree){
+                    this.msg='请同意用户协议';
+                    return;
+                }
+                var user = new User(this.name,this.psd);
+                var result = user.save()
+                if(result){
+                    this.msg='注册成功';
+                    this.iszero = false;
+                }else{
+                    this.msg='该用户名已注册'
+                }
+                $scope.xqw = JSON.parse(sessionStorage.getItem('user')||'[]') 
+            }
+
+
+
+
+
+            //定义一个user构造函数
+            function User(name,psd){
+                this.name = name;
+                this.psd = psd;
+            }
+
+            //给这个构造函数添加方法，
+            //保存的形式形如 {'user',[]}
+            User.prototype.save=function(){
+                //从sessionStorage中查询是否有内容
+                var data = sessionStorage.getItem('user') || '[]';
+                //本身storage中的内容都是字符串形式，要转变成对象，需要使用json.parse
+                var users= JSON.parse(data);
+
+                for(var i=0;i<users.length;i++){
+                    item = users[i];
+                    if(this.name==item.name){
+                        return false
+                    }                    
+                }
+            users.push({name:this.name,psd:this.psd});
+
+            sessionStorage.setItem('user',JSON.stringify(users));
+            
+            return true;                
+            }
+
+
+        })
+    </script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
