@@ -1,51 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Snowsmell's blog</title>
 </head>
-<link rel="stylesheet" href="lib/bootstrap/css/">
+<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/jquery.fullPage.css">
-<script src="lib/less/less.js"></script>
 
 <body>
 	<div id="dowebok">
 		<div class="section">
-			<ul>
-				<li>
-					<a href="vue简易留言板.html" id='vue1'>
-						去吧,到vue构成的简易留言板
-					</a>
-				</li>
-				<li>
-					<a href="./exercise-master/index.html" id='mmb'>
-						去吧,这是很渣的练手项目
-					</a>
-				</li>
-				<li>
-					<a href="./register.html" id='reg'>
-						未完成的angular模拟的信息表
-					</a>
-				</li>
-			</ul>
+			<div class="container">
+				<h1>SnowSmell == 雪气味</h1>
+				<h3>基于jq扩展的文本输入框组件</h3>
+				<p>修改配置</p>
+				<p>@param width {num} 设置文本域的长度单位是px
+					<input type="text" v-model="area.width">
+				</p>
+				<p>@param height {num} 设置文本域的宽度单位是px
+					<input type="text" v-model="area.height">
+				</p>
+				<p>@param font {num} 文本域字体大小
+					<input type="text" v-model="area.font">
+				</p>
+				<p>@param limit {num} 文本域限制字数
+					<input type="text" v-model="area.limit">
+				</p>
+				<p>@param text {String} 文本域默认内容
+					<input type="text" v-model="area.text">
+				</p>
+				<div id="area1"></div>
+			</div>
+
 		</div>
 		<div class="section">
-			<h3>不知当讲不当讲</h3>
+
 			<div class="slide">第二屏的第一屏</div>
 			<div class="slide">第二屏的第二屏</div>
 			<div class="slide">第二屏的第三屏</div>
 		</div>
 		<div class="section">
-			<h3></h3>					
+			<h3></h3>
 		</div>
 		<div class="section">
-			<h3>天若有情天亦老</h3>
+
 		</div>
 	</div>
-	<a href="javascript:;" class="back">返回</a>
+	<!-- <a href="javascript:;" class="back">返回</a> -->
 </body>
 <script src="lib/jquery/jquery-3.0.0.min.js"></script>
 <script src='lib/jquery/jquery.fullPage.min.js'></script>
+<script src="lib/baseJq/sign.js"></script>
+<script src="lib/baseJq/textarea.js"></script>
+<script src="lib/vue.js"></script>
 <script src="js/index.js"></script>
 </html>
