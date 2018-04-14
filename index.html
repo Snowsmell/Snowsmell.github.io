@@ -43,8 +43,8 @@
 				<div class="container">
 					<h3>基于jq扩展的画板签字组件</h3>
 					<div id="sign1"></div>
-					<button @click="clearsign">清除画板</button>
-					<button @click="savepic">保存签字</button>
+					<button @click="clearsign">重新签名</button>
+					<button @click="savepic">保存签名</button>
 					<span v-if = 'pic.length>0'>键盘->键查看签名</span>
 					<ul>
 						<li>width {number} 设置区域宽度</li><li><input type="text" v-model="sign.width"></li>
@@ -59,6 +59,7 @@
 				</div>								
 			</div>
 			<div class="slide">
+				<div v-if="pic.length==0">这里还啥都没有，先签个名试试</div>
 				<img :src="pic[0]" alt="">
 			</div>
 			<div class="slide">
