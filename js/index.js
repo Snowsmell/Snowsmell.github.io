@@ -26,6 +26,10 @@ var app = new Vue({
 		savepic:function(){
 			$('#sign1').sign('exportImg')
 			this.pic.push(sessionStorage.getItem('signImg'))
+		},
+		clearthis:function(n){			
+			this.pic[n]=0
+			console.log(this.pic[n])
 		}
 	},
 	created: function () {
