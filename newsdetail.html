@@ -9,27 +9,52 @@
 	<meta name="format-detection" content="telphone=no, email=no">
 	<title>news</title>
 	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" href="/assets/styles/news.css?f98521234e">
+	<link rel="stylesheet" href="/assets/styles/news.css?0a48ccb332">
 	<script src="/assets/jquery-1.12.4.min.js"></script>
 	<script src="/assets/flexible.js"></script>
 </head>
 
 <body>
 	<header>
-		<a href="/index.html">
-      <img src="/assets/images/logo-nav.png" alt="HWARI">
-    </a>
+		<a href="/index.html"><img src="/assets/images/logo-nav.png" alt="HWARI"></a>
 		<nav class="menu">
-			<a href="/index.html" data-menuanchor="homepage">首页</a>
+			<a href="/index.html#homepage" data-menuanchor="homepage">首页</a>
 			<a href="/index.html#energysave" data-menuanchor="energysave">使命愿景</a>
 			<a href="/index.html#innovation" data-menuanchor="innovation">产品介绍</a>
 			<a href="/index.html#partner" data-menuanchor="partner">合作伙伴</a>
 			<a href="/index.html#aboutus" data-menuanchor="aboutus">关于我们</a>
 			<a href="/news.html" id="news">新闻动态</a>
 			<a href="/login.html" id="login">登录</a>
-			<a href="/login.html?target=reg">注册</a>
+			<a href="/login.html?target=reg" id="reg">注册</a>
 		</nav>
+		<a href="javascript:;" id="personinfo">
+		<img src="" id="avatar">
+		<span id="username"></span>
+		<ul>
+			<li id="logout">退出登录</li>
+		</ul>
+	</a>
 	</header>
+	<script>
+		$(function() {
+			var token = window.sessionStorage.getItem('hwUserToken')
+			var username = window.sessionStorage.getItem('hwUserName')
+			var avator = window.sessionStorage.getItem('hwUserAvatar')
+			if (token) {
+				$('header').addClass('haslogined')
+				$('#avatar')[0].src = avator
+				$('#username').html(username)
+			}
+			$('#logout').on('click', function() {
+				window.sessionStorage.removeItem('hwUserToken')
+				window.sessionStorage.removeItem('hwUserName')
+				window.sessionStorage.removeItem('hwUserAvatar')
+				window.sessionStorage.removeItem('hwuserRole')
+				window.sessionStorage.removeItem('hwUserId')
+				location.reload()
+			})
+		})
+	</script>
 	<div class="banner">
 		<div class="container">
 			<h2>新闻资讯&nbsp;&nbsp; 实时掌握</h2>
