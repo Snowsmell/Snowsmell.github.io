@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Snowsmell's blog</title>
+</head>
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/jquery.fullPage.css">
+
+<body>
+	<div id="dowebok">
+
+		<div class="section">
+			<div class="container">
+				<div class="title overturn ">
+					<div class="front">
+						SnowSmell
+					</div>
+					<div class="back">
+						<a href="https://github.com/Snowsmell">雪气味</a>
+					</div>
+					<a href="./hwhome/index.html">我是姑且为了预览的网站链接</a>
+				</div>
+				<p class="start">个人简介</p>
+				<ul>
+					<li class="overturn shu">
+						<div class="front">
+							姓名: 薛启伟
+						</div>
+						<div class="back">
+							网名: 雪气味 || Snowsmell
+						</div>
+					</li>
+					<li class="overturn shu">
+						<div class="front">
+							联系方式：QQ=418381119；&nbsp;&nbsp;phone=17621185036; &nbsp;&nbsp;mail:snowsmell@aliyun.com
+						</div>
+						<div class="back">
+							Steam账号：xuesmell
+						</div>
+					</li>
+					<li class="overturn shu detail">
+						<div class="front">
+							具体情况：26岁，苏州籍贯，现居上海虹口区，全日制大学本科，15年6月毕业。
+							<p>毕业后从事前端开发工作，于去年5月来到上海,上一份工作是在上海金程教育公司的网校业务部，作为前端开发工程师</p>
+						</div>
+						<div class="back">
+							主要离职原因是并未兑现当初说好的薪资要求，存在分歧。遂月3月初提出离职，并于月底离开公司。
+						</div>
+					</li>
+				</ul>
+				<p class="start">技能</p>
+				<ul class="skill">
+					<li>
+						H5+c3+javascript;Jquery+vue.js
+					</li>
+					<li>
+						PC手机一站响应式站点&活动专题页; Hybrid H5内嵌页面 ; 微信小程序
+					</li>
+					<li>
+						Java learning
+					</li>
+					<li>
+						CET 6级
+					</li>
+					<li>
+						部分组件: 后两屏
+					</li>
+					<li>
+						部分代码：
+						<a href="https://github.com/Snowsmell">https://github.com/Snowsmell</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="section">
+			<div class="container">
+
+				<h3>基于jq扩展的文本输入框组件</h3>
+				<p>修改配置</p>
+				<p>@param width {num} 设置文本域的长度单位是px
+					<input type="text" v-model="area.width">
+				</p>
+				<p>@param height {num} 设置文本域的宽度单位是px
+					<input type="text" v-model="area.height">
+				</p>
+				<p>@param font {num} 文本域字体大小
+					<input type="text" v-model="area.font">
+				</p>
+				<p>@param limit {num} 文本域限制字数
+					<input type="text" v-model="area.limit">
+				</p>
+				<p>@param text {String} 文本域默认内容
+					<input type="text" v-model="area.text">
+				</p>
+				<p>@param color {String} 文本域字体颜色
+					<input type="text" v-model="area.color">
+				</p>
+				<div id="area1"></div>
+			</div>
+
+		</div>
+		<div class="section">
+			<div class="slide">
+				<div class="container">
+					<h3>基于jq扩展的画板签字组件</h3>
+					<div id="sign1"></div>
+					<button @click="clearsign">重新签名</button>
+					<button @click="savepic">保存签名</button>
+					<span v-if='pic.length>0'>键盘->键查看签名</span>
+					<ul>
+						<li>width {number} 设置区域宽度</li>
+						<li>
+							<input type="text" v-model="sign.width">
+						</li>
+						<li>height {number} 设置区域高度</li>
+						<li>
+							<input type="text" v-model="sign.height">
+						</li>
+						<li>lineWidth {number} 线宽</li>
+						<li>
+							<input type="text" v-model="sign.lineWidth">
+						</li>
+						<li>lineColor {string} 线的颜色</li>
+						<li>
+							<input type="text" v-model="sign.lineColor">
+						</li>
+						<li>background {string} 画布背景色</li>
+						<li>
+							<input type="text" v-model="sign.background">
+						</li>
+						<li>border {string} 区域边框</li>
+						<li>
+							<input type="text" v-model="sign.border">
+						</li>
+						<li>$(element).sig('empty'),清空当前画布实例</li>
+						<li>$(element).sing('exportImg')保存当前画布为图片，base64格式,存储于sessionStorage</li>
+					</ul>
+				</div>
+			</div>
+			<div class="slide" v-for="item in pic">
+				<div v-if="pic.length==0">这里还啥都没有，先签个名试试</div>
+				<img :src="pic[0]" alt="">
+			</div>
+
+		</div>
+
+	</div>
+	<!-- <a href="javascript:;" class="back">返回</a> -->
+</body>
+<script src="lib/jquery/jquery-3.0.0.min.js"></script>
+<script src='lib/jquery/jquery.fullPage.min.js'></script>
+<script src="lib/baseJq/sign.js"></script>
+<script src="lib/baseJq/textarea.js"></script>
+<script src="lib/vue.js"></script>
+<script src="js/index.js"></script>
+
+</html>
