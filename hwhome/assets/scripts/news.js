@@ -1,0 +1,2 @@
+"use strict";$(function(){for(var n="",s=0;s<9;s++)n+='     \n    <li>\n      <a href="/newsdetail.html">\n        <div class="imgbox">\n          <img src="/assets/images/news/news1.jpg" alt="">\n        </div>\n        <div class="text">\n          <h3>华瑞物联APP1.0成功上线</h3>\n          <p>中小微企业为中国经济发展做出了巨大贡献，由由于种种原因，中小微企业...</p>\n          <span>2018-02-06  12：34</span>\n        </div>\n      </a>\n    </li>\n  ';$("#news-list").html(n)});
+//# sourceMappingURL=news.js.map
