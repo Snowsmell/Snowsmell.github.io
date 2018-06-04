@@ -1,159 +1,249 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cmn-Hans">
 
 <head>
-	<meta charset="UTF-8">
-	<title>Snowsmell's blog</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telphone=no, email=no">
+	<title>hwariot</title>
+	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link href="/assets/styles/index.css?60b8d3bd31" rel="stylesheet">
+	<link href="/assets/jquery.fullpage.min.css" rel="stylesheet">
+	<script src="/assets/jquery-1.12.4.min.js"></script>
+	<script src="/assets/jquery.fullpage.min.js"></script>
+	<script src="/assets/flexible.js"></script>
+	<script src="/assets/scripts/index.js?e364640d49"></script>
 </head>
-<link rel="stylesheet" href="css/index.css">
-<link rel="stylesheet" href="css/jquery.fullPage.css">
 
 <body>
-	<div id="dowebok">
+	<header>
+		<a href="/index.html"><img src="/assets/images/logo-nav.png" alt="HWARI"></a>
+		<nav class="menu">
+			<a href="#homepage" data-menuanchor="homepage">首页</a>
+			<a href="#energysave" data-menuanchor="energysave">使命愿景</a>
+			<a href="#innovation" data-menuanchor="innovation">产品介绍</a>
+			<a href="#partner" data-menuanchor="partner">合作伙伴</a>
+			<a href="#aboutus" data-menuanchor="aboutus">关于我们</a>
+			<a href="/news.html" id="news">新闻动态</a>
+			<a href="/login.html" id="login">登录</a>
+			<a href="/login.html?target=reg">注册</a>
 
-		<div class="section">
-			<div class="container">
-				<div class="title overturn ">
-					<div class="front">
-						SnowSmell
-					</div>
-					<div class="back">
-						<a href="https://github.com/Snowsmell">雪气味</a>
-					</div>
-					<a href="./hwhome/index.html">我是姑且为了预览的网站链接</a>
-				</div>
-				<p class="start">个人简介</p>
-				<ul>
-					<li class="overturn shu">
-						<div class="front">
-							姓名: 薛启伟
-						</div>
-						<div class="back">
-							网名: 雪气味 || Snowsmell
-						</div>
-					</li>
-					<li class="overturn shu">
-						<div class="front">
-							联系方式：QQ=418381119；&nbsp;&nbsp;phone=17621185036; &nbsp;&nbsp;mail:snowsmell@aliyun.com
-						</div>
-						<div class="back">
-							Steam账号：xuesmell
-						</div>
-					</li>
-					<li class="overturn shu detail">
-						<div class="front">
-							具体情况：26岁，苏州籍贯，现居上海虹口区，全日制大学本科，15年6月毕业。
-							<p>毕业后从事前端开发工作，于去年5月来到上海,上一份工作是在上海金程教育公司的网校业务部，作为前端开发工程师</p>
-						</div>
-						<div class="back">
-							主要离职原因是并未兑现当初说好的薪资要求，存在分歧。遂月3月初提出离职，并于月底离开公司。
-						</div>
-					</li>
-				</ul>
-				<p class="start">技能</p>
-				<ul class="skill">
-					<li>
-						H5+c3+javascript;Jquery+vue.js
-					</li>
-					<li>
-						PC手机一站响应式站点&活动专题页; Hybrid H5内嵌页面 ; 微信小程序
-					</li>
-					<li>
-						Java learning
-					</li>
-					<li>
-						CET 6级
-					</li>
-					<li>
-						部分组件: 后两屏
-					</li>
-					<li>
-						部分代码：
-						<a href="https://github.com/Snowsmell">https://github.com/Snowsmell</a>
-					</li>
-				</ul>
+		</nav>
+	</header>
+	<nav class="menu right">
+		<a href="#homepage" data-menuanchor="homepage"></a>
+		<a href="#energysave" data-menuanchor="energysave"></a>
+		<a href="#innovation" data-menuanchor="innovation"></a>
+		<a href="#partner" data-menuanchor="partner"></a>
+		<a href="#aboutus" data-menuanchor="aboutus"></a>
+	</nav>
+	<main id="fullpage">
+		<div class="section homepage">
+			<div class="worktable">
+				<canvas id="starts">该浏览器不支持canvas</canvas>
+				<img data-src="/assets/images/index/round-outside.png" id="round1">
+				<img data-src="/assets/images/index/round-middle.png" id="round2">
+				<img data-src="/assets/images/index/round-inside.png" id="round3">
+				<h1 class="slogan">
+					<img data-src="/assets/images/index/slogan.png" alt="万物皆联 共生共利" id="slogan">
+					<img data-src="/assets/images/index/logo-center.png" id="homelogo">
+				</h1>
 			</div>
 		</div>
-		<div class="section">
-			<div class="container">
-
-				<h3>基于jq扩展的文本输入框组件</h3>
-				<p>修改配置</p>
-				<p>@param width {num} 设置文本域的长度单位是px
-					<input type="text" v-model="area.width">
-				</p>
-				<p>@param height {num} 设置文本域的宽度单位是px
-					<input type="text" v-model="area.height">
-				</p>
-				<p>@param font {num} 文本域字体大小
-					<input type="text" v-model="area.font">
-				</p>
-				<p>@param limit {num} 文本域限制字数
-					<input type="text" v-model="area.limit">
-				</p>
-				<p>@param text {String} 文本域默认内容
-					<input type="text" v-model="area.text">
-				</p>
-				<p>@param color {String} 文本域字体颜色
-					<input type="text" v-model="area.color">
-				</p>
-				<div id="area1"></div>
-			</div>
-
-		</div>
-		<div class="section">
-			<div class="slide">
+		<div class="section energysave">
+			<div class="worktable">
 				<div class="container">
-					<h3>基于jq扩展的画板签字组件</h3>
-					<div id="sign1"></div>
-					<button @click="clearsign">重新签名</button>
-					<button @click="savepic">保存签名</button>
-					<span v-if='pic.length>0'>键盘->键查看签名</span>
-					<ul>
-						<li>width {number} 设置区域宽度</li>
-						<li>
-							<input type="text" v-model="sign.width">
-						</li>
-						<li>height {number} 设置区域高度</li>
-						<li>
-							<input type="text" v-model="sign.height">
-						</li>
-						<li>lineWidth {number} 线宽</li>
-						<li>
-							<input type="text" v-model="sign.lineWidth">
-						</li>
-						<li>lineColor {string} 线的颜色</li>
-						<li>
-							<input type="text" v-model="sign.lineColor">
-						</li>
-						<li>background {string} 画布背景色</li>
-						<li>
-							<input type="text" v-model="sign.background">
-						</li>
-						<li>border {string} 区域边框</li>
-						<li>
-							<input type="text" v-model="sign.border">
-						</li>
-						<li>$(element).sig('empty'),清空当前画布实例</li>
-						<li>$(element).sing('exportImg')保存当前画布为图片，base64格式,存储于sessionStorage</li>
-					</ul>
+					<aside>
+						<img src="/assets/images/index/02-01.png">
+						<img src="/assets/images/index/02-02.png">
+						<img src="/assets/images/index/02-03.png">
+						<img src="/assets/images/index/02-04.png">
+						<img src="/assets/images/index/02-05.png">
+					</aside>
+					<article>
+						<h2><span>节能减排</span>我们坚持的使命</h2>
+						<p class="context">实时掌握司机与车辆数据，减少车辆空载率，提高运输空间利用率， 从而合理安排及管理车辆与货物</p>
+						<ul>
+							<li>
+								<div>
+									<b>234</b>
+									<sub>G</sub>
+								</div>
+								<span>减少碳排放</span>
+							</li>
+							<li>
+								<div>
+									<b>567</b>
+									<sub>万</sub>
+								</div>
+								<span>节省物流成本</span>
+							</li>
+							<li>
+								<div>
+									<b>97.6</b>
+									<sub>%</sub>
+								</div>
+								<span>减少空载率</span>
+							</li>
+							<li>
+								<div>
+									<b>623</b>
+									<sub>G</sub>
+								</div>
+								<span>节省燃油量</span>
+							</li>
+						</ul>
+					</article>
 				</div>
 			</div>
-			<div class="slide" v-for="item in pic">
-				<div v-if="pic.length==0">这里还啥都没有，先签个名试试</div>
-				<img :src="pic[0]" alt="">
-			</div>
-
 		</div>
-
-	</div>
-	<!-- <a href="javascript:;" class="back">返回</a> -->
+		<div class="section innovation">
+			<div class="worktable">
+				<div class="container">
+					<article>
+						<h2>
+							创新科技 引领未来</h2>
+						<p class="context">计算、存储、跟踪、安全、大数据、人工智能，华瑞物联助您飞跃发展</p>
+						<ul id="fourbubble">
+							<li class="on">
+								<div>
+									<img data-src="/assets/images/index/pg3-1.png" alt="移动ERP">
+								</div>
+								<p>移动ERP</p>
+							</li>
+							<li>
+								<div>
+									<img data-src="/assets/images/index/pg3-2.png" alt=" ai人脸识别">
+								</div>
+								<p>ai人脸识别</p>
+							</li>
+							<li>
+								<div>
+									<img data-src="/assets/images/index/pg3-3.png" alt=" 大数据风控">
+								</div>
+								<p>大数据风控</p>
+							</li>
+							<li>
+								<div>
+									<img data-src="/assets/images/index/pg3-4.png" alt="区块链">
+								</div>
+								<p>区块链</p>
+							</li>
+						</ul>
+						<div id="fourcontent">
+							<span class="tri1"></span>
+							<span class="tri2"></span>
+							<p class="on">
+								以手机终端为载体，通过无线网络连接服务器，建立可移动的信息化系统，将企业管理系统扩展到手机端，实现任何地点任何时间无缝连接，根据移动场景提供有针对性的碎片化节点应用。手机端与电脑端信息实时交互协同，使智能手机具备和电脑一样的办公功能，让用户把企业装进手机，业务随身而行，随时随地高效工作，将管理范围延伸至任何一个有网络的地方。
+							</p>
+							<p>
+								我是第二条 根据移动场景提供有针对性的碎片化节点应用。手机端与电脑端信息实时交互协同，使智能手机具备和电脑一样的办公功能，让用户把企业装进手机，业务随身而行，随时随地高效工作，将管理范围延伸至任何一个有网络的地方。
+							</p>
+							<p>
+								我是第三条 针对性的碎片化节点应用。手机端与电脑端信息实时交互协同，使智能手机具备和电脑一样的办公功能，让用户把企业装进手机，业务随身而行，随时随地高效工作，将管理范围延伸至任何一个有网络的地方。
+							</p>
+							<p>
+								我是第四条 有针对性的碎片化节点应用。手机端与电脑端信息实时交互协同，使智能手机具备和电脑一样的办公功能，让用户把企业装进手机，业务随身而行，随时随地高效工作，将管理范围延伸至任何一个有网络的地方。
+							</p>
+						</div>
+					</article>
+					<aside>
+						<img src="/assets/images/index/03-01.png">
+						<img src="/assets/images/index/03-02.png">
+						<img src="/assets/images/index/03-03.png">
+						<img src="/assets/images/index/03-04.png">
+						<img src="/assets/images/index/03-05.png">
+					</aside>
+				</div>
+			</div>
+		</div>
+		<div class="section partner">
+			<div class="worktable">
+				<div class="container">
+					<aside>
+						<img src="/assets/images/index/04-01.png">
+						<img src="/assets/images/index/04-02.png">
+						<img src="/assets/images/index/04-03.png">
+						<img src="/assets/images/index/04-04.png">
+						<img src="/assets/images/index/04-05.png">
+					</aside>
+					<article>
+						<h2>合作伙伴</h2>
+						<p class="context">计算、存储、跟踪、安全、大数据、人工智能，华瑞物联助您飞跃发展</p>
+						<ul>
+							<li>
+								<img src="/assets/images/index/partner/partner1.jpg" alt="钰翔集团">
+							</li>
+							<li>
+								<img src="/assets/images/index/partner/partner2.jpg" alt="上海华瑞银行">
+							</li>
+							<li>
+								<img src="/assets/images/index/partner/partner3.jpg" alt="中国建筑">
+							</li>
+							<li>
+								<img src="/assets/images/index/partner/partner4.jpg" alt="支付宝">
+							</li>
+							<li>
+								<img src="/assets/images/index/partner/partner5.jpg" alt="通联数据">
+							</li>
+							<li>
+								<img src="/assets/images/index/partner/partner6.jpg" alt="中国平安">
+							</li>
+							<li>
+								<img src="/assets/images/index/partner/partner7.jpg" alt="LOGINK">
+							</li>
+							<li>
+								<img src="/assets/images/index/partner/partner8.jpg" alt="途虎养车">
+							</li>
+							<li>
+								<img src="/assets/images/index/partner/partner9.jpg" alt="上海建工">
+							</li>
+							<li>
+								<img src="/assets/images/index/partner/partner10.jpg" alt="蚂蚁金服">
+							</li>
+							<li>
+								<img src="/assets/images/index/partner/partner11.jpg" alt="崇明富盛经济开发区">
+							</li>
+							<li>
+								<img src="/assets/images/index/partner/partner12.jpg" alt="中国移动">
+							</li>
+						</ul>
+					</article>
+				</div>
+			</div>
+		</div>
+		<div class="section aboutus">
+			<div class="worktable">
+				<div class="container">
+					<article>
+						<h2>关于我们</h2>
+						<p class="context">巽畅华瑞物联科技有限公司成立于2017年，是一家以物联网技术为核心，以电子商 务和供应链服务为依托，以科技创新为驱动力的高科技互联网公司，秉承“万物皆联、共生共利”的发展理念，致力于打造大物流、大数据、大平台三大生态体系，专注于产融生态圈的新模式，成为全球领先的E站式供应链服务提供商。
+						</p>
+						<ul>
+							<li>
+								<img src="/assets/images/index/wechat.jpg" alt="华瑞物联公众号">
+							</li>
+							<li>
+								<img src="/assets/images/index/qrcode.jpg" alt="华瑞物联App">
+							</li>
+						</ul>
+					</article>
+					<aside>
+						<img src="/assets/images/index/05-01.png">
+						<img src="/assets/images/index/05-02.png">
+						<img src="/assets/images/index/05-03.png">
+						<img src="/assets/images/index/05-04.png">
+						<img src="/assets/images/index/05-05.png">
+						<img src="/assets/images/index/05-06.png">
+					</aside>
+				</div>
+			</div>
+		</div>
+	</main>
 </body>
-<script src="lib/jquery/jquery-3.0.0.min.js"></script>
-<script src='lib/jquery/jquery.fullPage.min.js'></script>
-<script src="lib/baseJq/sign.js"></script>
-<script src="lib/baseJq/textarea.js"></script>
-<script src="lib/vue.js"></script>
-<script src="js/index.js"></script>
 
 </html>
