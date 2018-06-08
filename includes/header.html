@@ -18,22 +18,20 @@
 		</ul>
 	</a>
 </header>
+<script src="/assets/cookie.js"></script>
 <script>
 	$(function() {
-		var token = window.sessionStorage.getItem('hwUserToken')
-		var username = window.sessionStorage.getItem('hwUserName')
-		var avator = window.sessionStorage.getItem('hwUserAvatar')
+		var userData = null
+		var token = CookieUtil.get('hwUserToken')
 		if (token) {
+			userData = JSON.parse(CookieUtil.get('hwUserData'))
 			$('header').addClass('haslogined')
-			$('#avatar')[0].src = avator
-			$('#username').html(username)
+			$('#avatar')[0].src = userData.avator || '/assets/images/login/goodowner.png'
+			$('#username').html(userData.name || '无名氏')
 		}
 		$('#logout').on('click', function() {
-			window.sessionStorage.removeItem('hwUserToken')
-			window.sessionStorage.removeItem('hwUserName')
-			window.sessionStorage.removeItem('hwUserAvatar')
-			window.sessionStorage.removeItem('hwuserRole')
-			window.sessionStorage.removeItem('hwUserId')
+			CookieUtil.unset('hwUserToken')
+			CookieUtil.unset('hwUserData')
 			location.reload()
 		})
 	})

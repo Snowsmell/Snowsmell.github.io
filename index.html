@@ -11,7 +11,7 @@
 	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
-	<link href="/assets/styles/index.css?3055e1f46d" rel="stylesheet">
+	<link href="/assets/styles/index.css?e350a4fd52" rel="stylesheet">
 	<link href="/assets/jquery.fullpage.min.css" rel="stylesheet">
 	<script src="/assets/jquery-1.12.4.min.js"></script>
 	<script src="/assets/jquery.fullpage.min.js"></script>
@@ -40,22 +40,20 @@
 		</ul>
 	</a>
 	</header>
+	<script src="/assets/cookie.js"></script>
 	<script>
 		$(function() {
-			var token = window.sessionStorage.getItem('hwUserToken')
-			var username = window.sessionStorage.getItem('hwUserName')
-			var avator = window.sessionStorage.getItem('hwUserAvatar')
+			var userData = null
+			var token = CookieUtil.get('hwUserToken')
 			if (token) {
+				userData = JSON.parse(CookieUtil.get('hwUserData'))
 				$('header').addClass('haslogined')
-				$('#avatar')[0].src = avator
-				$('#username').html(username)
+				$('#avatar')[0].src = userData.avator || '/assets/images/login/goodowner.png'
+				$('#username').html(userData.name || '无名氏')
 			}
 			$('#logout').on('click', function() {
-				window.sessionStorage.removeItem('hwUserToken')
-				window.sessionStorage.removeItem('hwUserName')
-				window.sessionStorage.removeItem('hwUserAvatar')
-				window.sessionStorage.removeItem('hwuserRole')
-				window.sessionStorage.removeItem('hwUserId')
+				CookieUtil.unset('hwUserToken')
+				CookieUtil.unset('hwUserData')
 				location.reload()
 			})
 		})
