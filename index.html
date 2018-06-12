@@ -11,12 +11,12 @@
 	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
-	<link href="/assets/styles/index.css" rel="stylesheet">
+	<link href="/assets/styles/index.css?8f80a3f06d" rel="stylesheet">
 	<link href="/assets/jquery.fullpage.min.css" rel="stylesheet">
 	<script src="/assets/jquery-1.12.4.min.js"></script>
 	<script src="/assets/jquery.fullpage.min.js"></script>
 	<script src="/assets/flexible.js"></script>
-	<script src="/assets/scripts/index.js"></script>
+	<script src="/assets/scripts/index.js?ea10b6766b"></script>
 </head>
 
 <body>
@@ -27,8 +27,8 @@
 			<a href="/index.html#energysave" data-menuanchor="energysave">使命愿景</a>
 			<a href="/index.html#innovation" data-menuanchor="innovation">产品介绍</a>
 			<a href="/index.html#partner" data-menuanchor="partner">合作伙伴</a>
-			<a href="/index.html#aboutus" data-menuanchor="aboutus">关于我们</a>
-			<a href="/news.html" id="news">新闻动态</a>
+			<a href="/index.html#news" data-menuanchor="news">新闻动态</a>
+			<a href="/aboutus.html" id="aboutus">关于我们</a>
 			<a href="/login.html" id="login">登录</a>
 			<a href="/login.html?target=reg" id="reg">注册</a>
 		</nav>
@@ -48,7 +48,7 @@
 			if (token) {
 				userData = JSON.parse(CookieUtil.get('hwUserData'))
 				$('header').addClass('haslogined')
-				$('#avatar')[0].src = userData.avator || '/assets/images/login/goodowner.png'
+				$('#avatar')[0].src = userData.avatar || '/assets/images/login/goodowner.png'
 				$('#username').html(userData.name || '无名氏')
 			}
 			$('#logout').on('click', function() {
@@ -63,7 +63,7 @@
 		<a href="#energysave" data-menuanchor="energysave"></a>
 		<a href="#innovation" data-menuanchor="innovation"></a>
 		<a href="#partner" data-menuanchor="partner"></a>
-		<a href="#aboutus" data-menuanchor="aboutus"></a>
+		<a href="#news" data-menuanchor="news"></a>
 	</nav>
 	<main id="fullpage">
 		<div class="section homepage">
@@ -75,8 +75,8 @@
 			</div>
 			<div class="worktable w4">
 				<h1 class="slogan">
-					<img data-src="/assets/images/index/slogan.png" alt="万物皆联 共生共利" id="slogan">
-					<img data-src="/assets/images/index/logo-center.png" id="homelogo">
+					<img src="/assets/images/index/slogan.png" alt="万物皆联 共生共利" id="slogan">
+					<img src="/assets/images/index/logo-center.png" id="homelogo">
 				</h1>
 			</div>
 		</div>
@@ -243,29 +243,23 @@
 				</div>
 			</div>
 		</div>
-		<div class="section aboutus">
+		<div class="section news">
 			<div class="worktable">
 				<div class="container">
 					<article>
-						<h2>关于我们</h2>
-						<p class="context">巽畅华瑞物联科技有限公司成立于2017年，是一家以物联网技术为核心，以电子商 务和供应链服务为依托，以科技创新为驱动力的高科技互联网公司，秉承“万物皆联、共生共利”的发展理念，致力于打造大物流、大数据、大平台三大生态体系，专注于产融生态圈的新模式，成为全球领先的E站式供应链服务提供商。
-						</p>
-						<ul>
-							<li>
-								<img src="/assets/images/index/wechat.jpg" alt="华瑞物联公众号">
-							</li>
-							<li>
-								<img src="/assets/images/index/qrcode.jpg" alt="华瑞物联App">
-							</li>
-						</ul>
+						<h2>新闻动态 <a href="/news.html">查看更多>></a></h2>
+						<div id="newslist">
+							<ul></ul>
+						</div>
 					</article>
 					<aside>
-						<img src="/assets/images/index/05-01.png">
-						<img src="/assets/images/index/05-02.png">
-						<img src="/assets/images/index/05-03.png">
-						<img src="/assets/images/index/05-04.png">
-						<img src="/assets/images/index/05-05.png">
-						<img src="/assets/images/index/05-06.png">
+						<img src="/assets/images/index/06-01.png">
+						<img src="/assets/images/index/06-02.png">
+						<img src="/assets/images/index/06-03.png">
+						<img src="/assets/images/index/06-04.png">
+						<img src="/assets/images/index/06-05.png">
+						<img src="/assets/images/index/06-06.png">
+						<a id="infolist" href="/news.html"></a>
 					</aside>
 				</div>
 			</div>

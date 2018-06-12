@@ -9,7 +9,7 @@
 	<meta name="format-detection" content="telphone=no, email=no">
 	<title>news</title>
 	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" href="/assets/styles/news.css">
+	<link rel="stylesheet" href="/assets/styles/news.css?dfa6a97c21">
 	<script src="/assets/jquery-1.12.4.min.js"></script>
 	<script src="/assets/flexible.js"></script>
 </head>
@@ -22,8 +22,8 @@
 			<a href="/index.html#energysave" data-menuanchor="energysave">使命愿景</a>
 			<a href="/index.html#innovation" data-menuanchor="innovation">产品介绍</a>
 			<a href="/index.html#partner" data-menuanchor="partner">合作伙伴</a>
-			<a href="/index.html#aboutus" data-menuanchor="aboutus">关于我们</a>
-			<a href="/news.html" id="news">新闻动态</a>
+			<a href="/index.html#news" data-menuanchor="news">新闻动态</a>
+			<a href="/aboutus.html" id="aboutus">关于我们</a>
 			<a href="/login.html" id="login">登录</a>
 			<a href="/login.html?target=reg" id="reg">注册</a>
 		</nav>
@@ -43,7 +43,7 @@
 			if (token) {
 				userData = JSON.parse(CookieUtil.get('hwUserData'))
 				$('header').addClass('haslogined')
-				$('#avatar')[0].src = userData.avator || '/assets/images/login/goodowner.png'
+				$('#avatar')[0].src = userData.avatar || '/assets/images/login/goodowner.png'
 				$('#username').html(userData.name || '无名氏')
 			}
 			$('#logout').on('click', function() {

@@ -1,8 +1,10 @@
 {
-  "assets/styles/index.css": "assets/styles/index.css?6cb3c35191",
-  "assets/styles/index.css.map": "assets/styles/index.css.map?87c46b0d1c",
+  "assets/styles/aboutus.css": "assets/styles/aboutus.css?c07bb325dc",
+  "assets/styles/aboutus.css.map": "assets/styles/aboutus.css.map?c1f0b03614",
+  "assets/styles/index.css": "assets/styles/index.css?8f80a3f06d",
+  "assets/styles/index.css.map": "assets/styles/index.css.map?a7205eb315",
   "assets/styles/login.css": "assets/styles/login.css?da9c7823ed",
   "assets/styles/login.css.map": "assets/styles/login.css.map?b62c374e11",
-  "assets/styles/news.css": "assets/styles/news.css?6cbbe3dab3",
-  "assets/styles/news.css.map": "assets/styles/news.css.map?d7bc90baa0"
+  "assets/styles/news.css": "assets/styles/news.css?dfa6a97c21",
+  "assets/styles/news.css.map": "assets/styles/news.css.map?08114187e8"
 }
