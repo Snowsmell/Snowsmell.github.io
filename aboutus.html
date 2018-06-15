@@ -9,9 +9,9 @@
 	<meta name="format-detection" content="telphone=no, email=no">
 	<title>关于我们</title>
 	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" href="/assets/styles/aboutus.css?c6bf6dd85a">
+	<link rel="stylesheet" href="/assets/styles/aboutus.css?e1777d9c22">
 	<script src="/assets/jquery-1.12.4.min.js"></script>
-	<script src="/assets/flexible.js"></script>
+	<script src="/assets/scripts/comm/base.js?92977094e2"></script>
 </head>
 
 <body>
@@ -24,8 +24,8 @@
 			<a href="/index.html#partner" data-menuanchor="partner">合作伙伴</a>
 			<a href="/index.html#news" data-menuanchor="news">新闻动态</a>
 			<a href="/aboutus.html" id="aboutus">关于我们</a>
-			<a href="/login.html" id="login">登录</a>
-			<a href="/login.html?target=reg" id="reg">注册</a>
+			<!-- <a href="/login.html" id="login">登录</a>
+		<a href="/login.html?target=reg" id="reg">注册</a> -->
 		</nav>
 		<a href="javascript:;" id="personinfo">
 		<img src="" id="avatar">
@@ -115,14 +115,16 @@
 			<h3 class="title">
 				<img src="/assets/images/aboutus/title3.png">
 			</h3>
-			<a href="/assets/images/aboutus/team.jpg"><img src="/assets/images/aboutus/team.jpg"></a>
+			<a href="/assets/images/aboutus/team.jpg" target="_blank">
+        <img src="/assets/images/aboutus/team.jpg">
+      </a>
 		</div>
 		<div class="staff">
 			<h3 class="title">
 				<img src="/assets/images/aboutus/title4.png">
 				<a href="/staff.html">查看更多>></a>
 			</h3>
-			<ul class="list " id="personlist">
+			<ul class="list " id="stafflist">
 
 			</ul>
 		</div>
@@ -181,16 +183,16 @@
 		<div class="inner container">
 			<ul>
 				<li>
-					<a href="javascript:;">常见问题</a>
-					<a href="javascript:;">加入我们</a>
+					<a href="/aboutus.html">公司介绍</a>
+					<a href="/joinus.html">加入我们</a>
 				</li>
-				<li>
-					<a href="javascript:;">服务协议</a>
-					<a href="javascript:;">公司介绍</a>
-				</li>
+				<!-- <li>
+				<a href="javascript:;">服务协议</a>
+				<a href="javascript:;">公司介绍</a>
+			</li> -->
 				<li>
 					<p>微信:hwari</p>
-					<p>邮箱:info.@hwariot.com</p>
+					<p>邮箱:info@hwariot.com</p>
 				</li>
 			</ul>
 			<div class="imgbox">
@@ -200,19 +202,15 @@
 
 		</div>
 		<div class="copyright">
-			隐私声明&nbsp;
+			版权所有️©2018 巽畅华瑞物联科技有限公司 &nbsp;
 			<span class="space"></span>
-			<a href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备13031685号</a>&nbsp; 沪公网安备11010102001665号 &nbsp;2017-2027 ©GEOTMT.C
+			<a href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备17044103号-1</a>
 		</div>
 	</footer>
 	<script>
-		$(function() {
-			getnews()
-		})
-
 		function getnews() {
 			$.ajax({
-				url: 'http://test.oms.hwariot.com/api/v1/news/?page_size=3',
+				url: 'http://test.oms.hwariot.com/api/v1/staff-style-list/',
 				type: 'GET',
 				dataType: "json",
 				data: {},
@@ -225,7 +223,9 @@
 						page += '<li>' +
 							'<a href="/staffdetail.html?id=' + v.id + '">' +
 							'<div class="imgbox">' +
+							'<div>' +
 							'<img src=' + v.image_url + '>' +
+							'</div>' +
 							'</div>' +
 							'<div class="text">' +
 							'<h5>' + v.title + '</h5>' +
@@ -235,12 +235,24 @@
 							'</a>' +
 							'</li>'
 					})
-					$('#personlist').html(page)
+					$('#stafflist').html(page)
+				}
+			}).done(function(res) {
+				if ($(window).width() > 768) {
+					clipimg()
 				}
 			})
 		}
-	</script>
 
+		function clipimg() {
+			$('#stafflist img').each(function(i, v) {
+				$(v.parentNode).css({
+					'height': $(v).width() * 0.66
+				})
+			})
+		}
+		getnews()
+	</script>
 </body>
 
 </html>
