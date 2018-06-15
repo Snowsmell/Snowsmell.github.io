@@ -53,21 +53,21 @@
 			})
 		})
 	</script>
-	<div class="banner ">
+	<div class="banner staff">
 		<div class="container">
 			<h2>
 				<div>
-					新闻资讯 &nbsp;&nbsp;实时掌握
+					员工风采
 					<br>
-					<img src="/assets/images/news/news.png">
+					<img src="/assets/images/aboutus/staff.png">
 				</div>
 			</h2>
 		</div>
 	</div>
 	<main class="container">
 		<div class="brandnav">
-			<a href="/index.html">首页</a> >
-			<a href="/news.html">新闻动态</a>
+			<a href="/aboutus.html">关于我们</a> >
+			<a href="/staff.html">员工风采</a>
 		</div>
 		<h1></h1>
 		<aside>
@@ -171,7 +171,7 @@
 				data: {}
 			}).done(function(res) {
 				$('h1').html(res.title)
-				$('.time').html(res.created_time.replace('T', '&nbsp;&nbsp;'))
+				$('.time').html(res.created_time)
 				$('.content').html(res.content)
 			})
 		}

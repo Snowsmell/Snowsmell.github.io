@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telphone=no, email=no">
+	<title>加入我们</title>
+	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="/assets/styles/joinus.css?e0e219e371">
+	<script src="/assets/jquery-1.12.4.min.js"></script>
+	<script src="/assets/flexible.js"></script>
+</head>
+
+<body>
+	<header>
+		<a href="/index.html"><img src="/assets/images/logo-nav.png" alt="HWARI"></a>
+		<nav class="menu">
+			<a href="/index.html#homepage" data-menuanchor="homepage">首页</a>
+			<a href="/index.html#energysave" data-menuanchor="energysave">使命愿景</a>
+			<a href="/index.html#innovation" data-menuanchor="innovation">产品介绍</a>
+			<a href="/index.html#partner" data-menuanchor="partner">合作伙伴</a>
+			<a href="/index.html#news" data-menuanchor="news">新闻动态</a>
+			<a href="/aboutus.html" id="aboutus">关于我们</a>
+			<a href="/login.html" id="login">登录</a>
+			<a href="/login.html?target=reg" id="reg">注册</a>
+		</nav>
+		<a href="javascript:;" id="personinfo">
+		<img src="" id="avatar">
+		<span id="username"></span>
+		<ul>
+			<li id="logout">退出登录</li>
+		</ul>
+	</a>
+	</header>
+	<script src="/assets/cookie.js"></script>
+	<script>
+		$(function() {
+			var userData = null
+			var token = CookieUtil.get('hwUserToken')
+			if (token) {
+				userData = JSON.parse(CookieUtil.get('hwUserData'))
+				$('header').addClass('haslogined')
+				$('#avatar')[0].src = userData.avatar || '/assets/images/login/goodowner.png'
+				$('#username').html(userData.name || '无名氏')
+			}
+			$('#logout').on('click', function() {
+				CookieUtil.unset('hwUserToken')
+				CookieUtil.unset('hwUserData')
+				location.reload()
+			})
+		})
+	</script>
+	<div class="banner joinus">
+		<div class="container">
+			<h2>
+				<div>
+					加入我们
+					<br>
+					<img src="/assets/images/aboutus/joinus.png">
+				</div>
+			</h2>
+		</div>
+	</div>
+
+	<main>
+		<div class="container">
+			<nav class="jdlist">
+				<a href="javascript:;" data-target="CTO" class="on">CTO</a>
+				<a href="javascript:;" data-target="COO">COO</a>
+				<a href="javascript:;" data-target="CMO">CMO</a>
+			</nav>
+			<article id="CTO" class="on">
+				<dl>
+					<dt>工作职责:</dt>
+					<dd>1.负责组织制定公司系统移动互联网网站整体开发计划，规划公司产品的技术 架构，并组织实施 。</dd>
+					<dd>2.负责公司移动互联网产品的整体系统技术架构、服务器架构、网站开 发、产品实现及运维管理。 </dd>
+					<dd>3.负责组织并指导开发人员在整体架构下开展产品设计、系统 研发、上线前的测试工作，协调项目开发或实施的各个环节，把握项目的整体进度;</dd>
+					<dd>4.进 行公司技术团队的梯队建设及管理，包括专业培训、技术指导、职业化培养、业绩评估和激励， 全面提升团队的技术水平。</dd>
+					<dd>5.负责部门之间的工作流程与制度的制订与落地; </dd>
+					<dd>6.组织跨部 门主要负责人的工作会议，确定年度、季度工作计划与 OKR; </dd>
+					<dd>7.监督技术发展战略规划的 执行情况; 8.对公司的整体战略目标有清晰的认识，并与公司高层的中长远计划保持一致; 9.与业务部门沟通产品需求，并带领开发产品</dd>
+				</dl>
+				<dl>
+					<dt>任职要求:</dt>
+					<dd>1.重点本科院校，全日制本科及以上学历，计算机软件开发等相关专业; </dd>
+					<dd>2.具 有 8 年以上丰富的项目管理、产品研发、管理及项目团队、产品团队管理经验。从事本岗位管 理工作 5 年以上; </dd>
+					<dd>3.熟悉互联网与电子商务 B2B 领域业务，精通大型网站系统的架构设计、 系统分析、数据分析与信息安全; </dd>
+					<dd>4.能够把握行业技术发展趋势和业务发展动向，对关键 技术有自己的独到见解; </dd>
+					<dd>5.有良好的沟通、协调、组织和团队建设能力及创业激情;</dd>
+					<dd>6.具 有高度责任心及使命感，能认可并带动技术工作氛围，能承担一定的工作压力; </dd>
+					<dd>7.具有良好 的团队合作; </dd>
+					<dd>8.有大宗商品在线供应链平台 0-1 项目经验者优先。</dd>
+				</dl>
+			</article>
+			<article id="COO">
+				<dl>
+					<dt>工作职责:</dt>
+					<dd>1.负责平台的整体运营工作，制定运营方案并组织执行，同时需要进行组织团队的搭建。</dd>
+					<dd>2.根据公司的发展规划，结合市场需求，开发设计适合平台的产品、业务流程，制定相应 的推广策略和方案；推动各项业务发展，提升营运效益，确保运营目标的实现。
+					</dd>
+					<dd>3.统计、分析平台各类数据，提出改进方案，带领团队进行平台的维护，推广及升级，并 制订、完善、贯彻实施公司平台运营管理制度、流程。
+					</dd>
+					<dd>4.通过网站运营提升网站价值，提高活跃度，提高申请、交易量；</dd>
+					<dd>5.用户体验、业务流程等的分析和改进并参与平台的品牌、产品、市场的规划，实现公司 既定目标；
+					</dd>
+					<dd>6.规划平台的风格、架构、功能、频道，负责团队建设、团队培训和日常工作开展等。</dd>
+					<dd>7.负责公司运营平台的人员架构、制度、流程等相关体系建设，为高层决策提供相应的方 案，并组织实施。
+					</dd>
+				</dl>
+				<dl>
+					<dt>任职要求:</dt>
+					<dd>1.统招本科以上学历，电子商务、市场营销等相关专业，5 年以上互联网行业相关工作经 验，2-3 年大宗商品在线供应链平台运营经验，DAU 10 万以上，；</dd>
+					<dd>2.熟悉供应链金融业务的发展现状及趋势，有丰富的网站运营策划和市场推广经验；</dd>
+					<dd>3.具备丰富的社会资源和人脉关系，组织协调管理能力强；</dd>
+					<dd>4.具备良好的团队管理能力，能够独立组建团队，善于调动团队力量开展工作；</dd>
+					<dd>5.具有全国网络化布局及经营管理背景，熟悉大宗商品在线供应链平台者优先。</dd>
+				</dl>
+			</article>
+			<article id="CMO">
+				<dl>
+					<dt>工作职责:</dt>
+					<dd>1.根据公司业务发展战略，制定公司整体市场拓展和品牌推广策略，并跟踪执行。</dd>
+					<dd>2. 负责公司 PC 端和移动端产品的线上线下整合营销，制定符合公司特色的营销推广计划和 策略；
+					</dd>
+					<dd>3. 负责市场部线上线下推广（各 APP 应用市场、CPS、SEM、SEO、BD、SNS、微信微博 新媒体）。
+					</dd>
+					<dd>4. 对广告及推广活动的发布实施进行事前、事中、事后效果评估，及时给予调整、修正。</dd>
+					<dd>5. 做好目标群体调查和品牌跟踪调查，并以此及时做好品牌方向调整和品牌战略规划，据 科学合理的调研数据指导各项品牌活动和营销活动。
+					</dd>
+					<dd>6. 创建并完善公司的市场团队及工作流程，并为市场部成员提供必要的培训及分享，使团 队持续改进。
+					</dd>
+					<dd>7. 制定并管控部门绩效和预算。
+					</dd>
+					<dd>8. 发现潜在的问题和不确定性因素，推动跨部门合作，制定和完善能够调动协作部门参与 的工作计划，并与所有部门协作以确保工作计划顺利完成。
+					</dd>
+				</dl>
+				<dl>
+					<dt>任职要求:</dt>
+					<dd>1. 新闻传播学、市场营销、网络营销或电子商务相关专业本科以上学历，有十年以上从事广告或 市场营销工作经验，八年以上相关管理经验。
+					</dd>
+					<dd>2. 营销功底深厚，通晓品牌管理、公共关系、传播、法律等知识。</dd>
+					<dd>3. 熟悉电商行业尤其是大宗商品在线供应链行业者优先。</dd>
+					<dd>4. 具备良好的沟通能力及文字表达能力，逻辑性强。</dd>
+					<dd>5. 有较强的沟通、协调能力，抗压性强，愿意和创业团队一起成长。</dd>
+					<dd>6、有成功案例者优先。</dd>
+				</dl>
+			</article>
+		</div>
+	</main>
+	<footer>
+		<div class="inner container">
+			<ul>
+				<li>
+					<a href="javascript:;">常见问题</a>
+					<a href="javascript:;">加入我们</a>
+				</li>
+				<li>
+					<a href="javascript:;">服务协议</a>
+					<a href="javascript:;">公司介绍</a>
+				</li>
+				<li>
+					<p>微信:hwari</p>
+					<p>邮箱:info.@hwariot.com</p>
+				</li>
+			</ul>
+			<div class="imgbox">
+				<img src="/assets/images/index/wechat.jpg" alt="华瑞物联公众号">
+				<img src="/assets/images/index/qrcode.jpg" alt="华瑞物联App">
+			</div>
+
+		</div>
+		<div class="copyright">
+			隐私声明&nbsp;
+			<span class="space"></span>
+			<a href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备13031685号</a>&nbsp; 沪公网安备11010102001665号 &nbsp;2017-2027 ©GEOTMT.C
+		</div>
+	</footer>
+	<script>
+		$(function() {
+			function showJd(enter) {
+				var target = enter || window.location.hash.substring(1)
+				$('#' + target).addClass('on').siblings('article').removeClass('on')
+				$('.jdlist a').each(function(i, v) {
+					if ($(v).text() === target) {
+						$(v).addClass('on').siblings('a').removeClass('on')
+						return
+					}
+				})
+			}
+			showJd()
+			$('.jdlist a').on('click', function() {
+				$(this).addClass('on').siblings('').removeClass('on')
+				showJd($(this).data('target'))
+			})
+		})
+	</script>
+</body>
+
+</html>
